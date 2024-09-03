@@ -1,3 +1,7 @@
 venv/
 __pycache__/
 *.pyc
+categories/tests.py
+inflows/tests.py
+outflow/tests.py
+products/tests.py
