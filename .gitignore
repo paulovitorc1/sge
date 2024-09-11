@@ -6,3 +6,4 @@ categories/tests.py
 inflows/tests.py
 outflow/tests.py
 products/tests.py
+venv
