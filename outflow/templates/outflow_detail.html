@@ -3,7 +3,7 @@
 {% block content %}
 
 <div class="container mt-4">
-    <h3 class="disply-6">Detalhes da Entrada</h3>
+    <h3 class="disply-6">Detalhes da Saída</h3>
 
     <div class="card">
         <div class="card-body">
@@ -12,7 +12,7 @@
             <p class="card-text">Descrição: <strong>{{ object.description }}</strong></p>
         </div>
     </div>
-    <a href="{% url 'inflow_list' %}" class="btn btn-secondary mt-3">Voltar para a Lista de Entrada</a>
+    <a href="{% url 'outflow_list' %}" class="btn btn-secondary mt-3">Voltar para a Lista de Saídas</a>
 
 </div>
 

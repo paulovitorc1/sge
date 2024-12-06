@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
 
 {% block title %}
-SGE - Entradas
+SGE - Saídas
 {% endblock %}
 
 {% block content %}
 
 <div class="row mb-3">
     <div class="col-md-6">
-        <form method="get" action="{% url 'inflow_list' %}">
+        <form method="get" action="{% url 'outflow_list' %}">
             <div class="input-group">
                 <input type="text" class="form-control" name="product" placeholder="Produto"
                     value="{{ request.GET.product }}">
@@ -19,8 +19,8 @@ SGE - Entradas
         </form>
     </div>
     <div class="col-md-6">
-        <a href="{% url 'inflow_create' %}" class="btn btn-success float-end">
-            <i class="bi bi-plus"></i> Nova Entrada
+        <a href="{% url 'outflow_create' %}" class="btn btn-success float-end">
+            <i class="bi bi-plus"></i> Nova Saída
         </a>
     </div>
 </div>
@@ -37,14 +37,14 @@ SGE - Entradas
             </tr>
         </thead>
         <tbody>
-            {% for inflow in inflows %}
+            {% for outflow in outflows %}
             <tr>
-                <td>{{ inflow.id }}</td>
-                <td>{{ inflow.product }}</td>
-                <td>{{ inflow.quantity }}</td>
-                <td>{{ inflow.created_at }}</td>
+                <td>{{ outflow.id }}</td>
+                <td>{{ outflow.product }}</td>
+                <td>{{ outflow.quantity }}</td>
+                <td>{{ outflow.created_at }}</td>
                 <td>
-                    <a href="{% url 'inflow_detail' inflow.id %}" class="btn btn-info btn-sm">
+                    <a href="{% url 'outflow_detail' outflow.id %}" class="btn btn-info btn-sm">
                         <i class="bi bi-eye"></i>
                     </a>
                 </td>

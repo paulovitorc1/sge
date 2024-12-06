@@ -3,18 +3,18 @@
 {% block content %}
 
 <div class="container mt-4">
-    <h3 class="display-6">Cadastrar Entrada</h3>
+    <h3 class="display-6">Cadastrar Saída</h3>
 
     <div class="card">
         <div class="card-body">
             <form method="post" class="form">
                 {% csrf_token %}
                 {{ form.as_p }}
-                <button type="submit" class="btn btn-primary">Registrar Entrada</button>
+                <button type="submit" class="btn btn-primary">Registrar Saída</button>
             </form>
         </div>
     </div>
-    <a href="{% url 'inflow_list' %}" class="btn btn-secondary mt-3">Cancelar e voltar para a Lista de Entradas</a>
+    <a href="{% url 'outflow_list' %}" class="btn btn-secondary mt-3">Cancelar e voltar para a Lista de Saídas</a>
 </div>
 
 {% endblock %}
