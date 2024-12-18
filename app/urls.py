@@ -9,5 +9,5 @@ urlpatterns = [
     path('', include('suppliers.urls')),
     path('', include('inflows.urls')),
     path('', include('outflow.urls')),
-    
+    path('', include('products.urls')),
 ]
