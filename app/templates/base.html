@@ -20,21 +20,20 @@
 
     {% include 'components/_header.html' %}
 
-    <div class="container-fluid">
+        <div class="container-fluid">
 
-        {% include 'components/_sidebar.html' %}
+            {% include 'components/_sidebar.html' %}
 
-        <div class="col py-3">
-            <div class="container mt-4">
-                <main>
-                    {% block content %}
-                    {% endblock %}
-                </main>
+            <div class="col py-3">
+                <div class="container mt-4">
+                    <main>
+                        {% block content %}
+                        {% endblock %}
+                    </main>
+                </div>
             </div>
-        </div>
-    </div>
 
-    </div>
+        </div>
     {% include 'components/_footer.html' %}
 </body>
 
