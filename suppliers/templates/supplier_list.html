@@ -17,11 +17,13 @@ SGE - Fornecedores
             </div>
         </form>
     </div>
-    <div class="col-md-6">
-        <a href="{% url 'supplier_create' %}" class="btn btn-success float-end">
-            <i class="bi bi-plus"></i> Novo Fornecedor
-        </a>
-    </div>
+    {% if perms.suppliers.add_supplier %}
+        <div class="col-md-6">
+            <a href="{% url 'supplier_create' %}" class="btn btn-success float-end">
+                <i class="bi bi-plus"></i> Novo Fornecedor
+            </a>
+        </div>
+    {% endif %}
 </div>
 
 <div class="table-responsive">
@@ -41,15 +43,21 @@ SGE - Fornecedores
                 <td>{{ supplier.name }}</td>
                 <td>{{ supplier.description }}</td>
                 <td>
-                    <a href="{% url 'supplier_detail' supplier.id %}" class="btn btn-info btn-sm">
-                        <i class="bi bi-eye"></i>
-                    </a>
-                    <a href="{% url 'supplier_update' supplier.id %}" class="btn btn-warning btn-sm">
-                        <i class="bi bi-pencil"></i>
-                    </a>
-                    <a href="{% url 'supplier_delete' supplier.id %}" class="btn btn-danger btn-sm">
-                        <i class="bi bi-trash"></i>
-                    </a>
+                    {% if perms.suppliers.view_supplier %}
+                        <a href="{% url 'supplier_detail' supplier.id %}" class="btn btn-info btn-sm">
+                            <i class="bi bi-eye"></i>
+                        </a>
+                    {% endif %}
+                    {% if perms.suppliers.change_supplier %}
+                        <a href="{% url 'supplier_update' supplier.id %}" class="btn btn-warning btn-sm">
+                            <i class="bi bi-pencil"></i>
+                        </a>
+                    {% endif %}
+                    {% if perms.suppliers.delete_supplier %}
+                        <a href="{% url 'supplier_delete' supplier.id %}" class="btn btn-danger btn-sm">
+                            <i class="bi bi-trash"></i>
+                        </a>
+                    {% endif %}
                 </td>
             </tr>
             {% endfor %}
